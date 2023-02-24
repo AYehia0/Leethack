@@ -1,5 +1,3 @@
-import "math"
-
 func longestConsecutive(nums []int) int {
     /*
     Most obvious solution is sorting but it's O(nlogn)
@@ -29,7 +27,9 @@ func longestConsecutive(nums []int) int {
             for m[num + co] {
                 co++
             }
-            longest = int(math.Max(float64(co), float64(longest)))
+            if co > longest {
+                longest = co
+            }
         }
     }
 
